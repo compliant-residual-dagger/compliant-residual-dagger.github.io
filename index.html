@@ -28,7 +28,7 @@
 		<!-- Main -->
 			<div id="main" style="padding-bottom:1em; padding-top: 5em; width: 60em; max-width: 70em; margin-left: auto; margin-right: auto;">
 					<section id="four">
-                        <h1 style="text-align: center; margin-bottom: 0; color: #4e79a7; font-size: 300%">Compliant Residual DAgger:<br></h1>
+                        <h1 style="text-align: center; margin-bottom: 0; color: #4e79a7; font-size: 300%">Compliant Residual DAgger<br></h1>
 						<h2 style="text-align: center; white-space: nowrap; font-size: 150%">Improving Real-World Contact-Rich Manipulation with Human Corrections</h2>
 
 						<div style="margin-top: 2em; margin-bottom: 2em;">
@@ -41,7 +41,7 @@
 							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
 								<span class="image fit">
 									<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-										<source src="videos/" type="video/mp4">
+										<source src="videos/book_ours_11.mp4" type="video/mp4">
 									</video>
 									<div style="position: absolute; top: 2%; right: 1%">
 										<p style="color: white; text-align: center; font-size: 2em">1x</p>
@@ -52,7 +52,7 @@
 							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
 								<span class="image fit">
 									<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-										<source src="videos/" type="video/mp4">
+										<source src="videos/belt_wo_human.mp4" type="video/mp4">
 									</video>
 									<div style="position: absolute; top: 2%; right: 1%">
 										<p style="color: white; text-align: center; font-size: 2em">1x</p>
@@ -61,29 +61,12 @@
 							</div>
 						</div>
 
-						<div class="row 50% uniform" style="width: 100%">
-							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
-								<span class="image fit">
-									<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-										<source src="videos/" type="video/mp4">
-									</video>
-									<div style="position: absolute; top: 2%; right: 1%">
-										<p style="color: white; text-align: center; font-size: 2em">1x</p>
-									</div>
-								</span>
-							</div>
-
-							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
-								<span class="image fit">
-									<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-										<source src="videos/" type="video/mp4">
-									</video>
-									<div style="position: absolute; top: 2%; right: 1%">
-										<p style="color: white; text-align: center; font-size: 2em">1x</p>
-									</div>
-								</span>
-							</div>
-						</div>
+						<p style="color: black;">
+							We address key challenges in Dataset Aggregation (DAgger) for real-world contact-rich manipulation: how to collect informative human correction data and how to effectively update policies with this new data. 
+We introduce Compliant Residual DAgger (CR-DAgger), which contains two novel components: 
+1) a Compliant Intervention Interface that leverages compliance control, allowing humans to provide gentle, accurate delta action corrections without interrupting the ongoing robot policy execution; and 2) a Compliant Residual Policy formulation that learns from human corrections while incorporating force feedback and force control.
+Our system significantly enhances performance on precise contact-rich manipulation tasks using minimal correction data, improving base policy success rates by over 50% on two challenging tasks (book flipping and belt assembly) while outperforming both retraining-from-scratch and finetuning approaches. Through extensive real-world experiments, we provide practical guidance for implementing effective DAgger in real-world robot learning tasks.
+						</p>
 						
 
 						<!-- <div class="row" style="margin-top: 3em;">
@@ -100,124 +83,137 @@
 								<img src="images/teaser_v6.jpg" style="width: 100%; height: auto;">
 							</div>
 							<p style="color: black;">
-								CR-DAgger consists of (1) a Compliant Intervention Interface that leverages compliance control, allowing humans to provide gentle, accurate delta action corrections without interrupting the ongoing robot policy execution; and (2) a Compliant Residual Policy formulation that learns from human corrections while incorporating force feedback and force control.
+								To improve a robot manipulation policy, we propose a compliant intervention interface (a) for collecting human correction data, and use this data to update a compliant residual policy (b), and thoroughly study their effects by deploying the updated policy on two contact-rich manipulation tasks in the real world (c).
 							</p>
 						</div>
 
 						<hr>
-						<h2 style="color: black;">Experiments</h2>
+						<h2 style="color: black;">Compliant Intervention Interface</h2>
+						<div class="row" style="margin-bottom: -2em;">
+							<div class="12u$ 12u$(xsmall)" style="text-align: center;">
+								<img src="images/data collection.png" style="width: 100%; height: auto;">
+							</div>
+						</div>
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_correction.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_correction_2x.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">2x</p>
+									</div>
+								</span>
+							</div>
+						</div>
 						
-						<h3>(1) Book Flipping &#128230; </h3>
-						<u><b>Task</b></u> ###
-						<br>
-						<u><b>Capability</b></u> ###
-						<br>
-						<u><b>Comparisons</b></u> 
-						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Ours
-								</div>
+						<hr>
+						<h2 style="color: black;">Findings & Results</h2>
+						<h3>Finding 1: Compliant Residual Policy improves base policy by a large margin</h3>
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_base_failure_1_3x.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Base Policy: Incomplete flipping
+							</div>
 
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Ours
-								</div>
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_ours_4.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Base + Compliant Residual Policy (ours)
+							</div>
+						</div>
 
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Ours
-								</div>
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_base_failure_2.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+								Base Policy: Missed insertion
+							</div>
 
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Ours
-								</div>
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_ours_7.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Base + Compliant Residual Policy (ours)
 							</div>
 						</div>
 
 						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
 							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
+								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
 										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
+											<source src="videos/belt_base_failure_0.mp4" type="video/mp4">
 										</video>
 										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
+											<p style="color: white; text-align: center; font-size: 1em">4x</p>
 										</div>
 									</span>
-									Baseline
+									Base Policy: Stuck on base
 								</div>
 
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
+								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
 										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
+											<source src="videos/belt_base_failure_1.mp4" type="video/mp4">
 										</video>
 										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
+											<p style="color: white; text-align: center; font-size: 1em">4x</p>
 										</div>
 									</span>
-									Baseline
+									Base Policy: Missed the slot
 								</div>
 
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
+								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
 										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
+											<source src="videos/belt_ours_1.mp4" type="video/mp4">
 										</video>
 										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
+											<p style="color: white; text-align: center; font-size: 1em">4x</p>
 										</div>
 									</span>
-									Baseline
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Baseline
+									Base + Compliant Residual Policy (ours)
 								</div>
 							</div>
 						</div>
 
-						<u><b>All Policy Rollouts</b></u>
+						<!-- <u><b>All Policy Rollouts</b></u>
 						<div class="box alt" style="width: 80%; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
 							<div class="row 50% uniform" style="width: 80%;">
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 100%">
@@ -228,96 +224,229 @@
 									</span>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<br>
-						<h3>(2) Belt Assembly &#129521; </h3>
-						<u><b>Task</b></u> ###
-						<br>
-						<u><b>Capability</b></u> ###
-						<br>
-						<u><b>Comparisons</b></u> ###
-						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Ours
-								</div>
+						<h3>Finding 2: Residual policy allows additional useful modality to be added during correction </h3>
 
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Ours
-								</div>
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_residual_wo_force_failure_0.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Residual w/o force: Incomplete flipping
+							</div>
 
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Ours
-								</div>
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_ours_3.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Compliant Residual Policy (ours)
 							</div>
 						</div>
 
-						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Baseline
-								</div>
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_residual_wo_force_failure_0.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">4x</p>
+									</div>
+								</span>
+								Residual w/o force: Missed the slot
+							</div>
 
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Baseline
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 1em">1x</p>
-										</div>
-									</span>
-									Baseline
-								</div>
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_ours_2.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">4x</p>
+									</div>
+								</span>
+								Compliant Residual Policy (ours)
 							</div>
 						</div>
 
-						<u><b>All Policy Rollouts</b></u>
+						<br>
+						<h3>Finding 3: Smooth On-Policy Delta data makes training more stable </h3>
+
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_residual_takeover.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+								Trained with Take-Over correction: Insert too high
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_ours_1.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Trained with On-Policy Delta correction (ours)
+							</div>
+						</div>
+
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_takeover_failure0.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">4x</p>
+									</div>
+								</span>
+								Trained with Take-Over correction: Missed the slot
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_ours_3.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">4x</p>
+									</div>
+								</span>
+								Trained with On-Policy Delta correction (ours)
+							</div>
+						</div>
+
+						<br>
+						<h3>Finding 4: Retraining base policy is stable but learns correction behavior slowly </h3>
+
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_retrain_failure_0.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Retrain with correction: Incomplete flipping
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_ours_14_3x.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Compliant Residual Policy (ours)
+							</div>
+						</div>
+
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_retrain_failure0.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">4x</p>
+									</div>
+								</span>
+								Retrain with correction: Stuck on base
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_ours_4.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">4x</p>
+									</div>
+								</span>
+								Compliant Residual Policy (ours)
+							</div>
+						</div>
+
+						<br>
+						<h3>Finding 5: Finetuning base policy is unstable </h3>
+
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_finetune_failure_0.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Finetune with correction: unstable motion
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/book_ours_8.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">3x</p>
+									</div>
+								</span>
+								Compliant Residual Policy (ours)
+							</div>
+						</div>
+
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_finetune_failure_0.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">4x</p>
+									</div>
+								</span>
+								Finetune with correction: unstable motion
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/belt_ours_5.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">4x</p>
+									</div>
+								</span>
+								Compliant Residual Policy (ours)
+							</div>
+						</div>
+
+						<!-- <u><b>All Policy Rollouts</b></u>
 						<div class="box alt" style="width: 80%; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
 							<div class="row 50% uniform" style="width: 80%;">
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 100%">
@@ -328,7 +457,7 @@
 									</span>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- <hr>
 						<h3>Citation</h3>
