@@ -36,6 +36,8 @@
 								<span style="color: black"><a href="https://xxm19.github.io/">Xiaomeng Xu<sup>*</sup></a> &nbsp&nbsp <a
 										href="https://yifan-hou.github.io/">Yifan Hou<sup>*</sup></a>
 									&nbsp&nbsp <a
+										href="https://star-xcd.github.io">Chendong Xin</a>
+									&nbsp&nbsp <a
 										href="https://lzylucy.github.io/">Zeyi Liu</a>
 									&nbsp&nbsp <a
 										href="https://shurans.github.io/">Shuran Song</a> <br>
@@ -108,11 +110,35 @@
 							</div>
 						</div>
 
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/gear_residual.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/cable_residual.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+							</div>
+						</div>
+
 						<p style="color: black;">
 							We address key challenges in Dataset Aggregation (DAgger) for real-world contact-rich manipulation: how to collect informative human correction data and how to effectively update policies with this new data. 
 We introduce Compliant Residual DAgger (CR-DAgger), which contains two novel components: 
 1) a Compliant Intervention Interface that leverages compliance control, allowing humans to provide gentle, accurate delta action corrections without interrupting the ongoing robot policy execution; and 2) a Compliant Residual Policy formulation that learns from human corrections while incorporating force feedback and force control.
-Our system significantly enhances performance on precise contact-rich manipulation tasks using minimal correction data, improving base policy success rates by over 50% on two challenging tasks (book flipping and belt assembly) while outperforming both retraining-from-scratch and finetuning approaches. Through extensive real-world experiments, we provide practical guidance for implementing effective DAgger in real-world robot learning tasks.
+Our system significantly enhances performance on precise contact-rich manipulation tasks using minimal correction data, improving base policy success rates by over 50% on four challenging tasks (book flipping, belt assembly, gear insertion, and cable routing) while outperforming both retraining-from-scratch and finetuning approaches. Through extensive real-world experiments, we provide practical guidance for implementing effective DAgger in real-world robot learning tasks.
 						</p>
 						
 
@@ -164,11 +190,39 @@ Our system significantly enhances performance on precise contact-rich manipulati
 								</span>
 							</div>
 						</div>
+
+					<!-- Toggleable Section 1: Distribution Shift -->
+					<div class="toggle-section">
+						<div class="toggle-header" onclick="toggleSection('distribution-shift')">
+							<span>[On-Policy Delta] introduces less distribution shift</span>
+							<span class="toggle-arrow">▼</span>
+						</div>
+						<div class="toggle-content" id="distribution-shift">
+							<div style="text-align: center; margin-bottom: 2em;">
+								<img src="images/Figure_1_traj_belt.jpeg" alt="Distribution Shift Analysis" style="width: 70%;">
+								<p>Here shows the distribution of fingertip trajectories across all dimensions in base policy training data, [On-Policy Delta] and [Take-Over-Correction] data. [On-Policy Delta] data's distribution is better aligned with base policy training data's distribution than [Take-Over-Correction] data.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Toggleable Section 2: Smoother Trajectories -->
+					<div class="toggle-section">
+						<div class="toggle-header" onclick="toggleSection('smoother-trajectories')">
+							<span>[On-Policy Delta] enables smoother trajectories</span>
+							<span class="toggle-arrow">▼</span>
+						</div>
+						<div class="toggle-content" id="smoother-trajectories">
+							<div style="text-align: center; margin-bottom: 2em;">
+								<img src="images/Figure_1_book_vel.png" alt="Velocity Analysis" style="width: 70%;">
+								<p>Here compares velocity magnitude within 1.5s of the corrections starts/ends. [On-Policy Delta] velocity magnitudes are smaller and more consistent, [Take-Over Correction] has notably larger magnitude and variations, demonstrating that [On-Policy Delta] encourages smoother trajectories.</p>
+							</div>
+						</div>
+					</div>
 						
 						<hr>
 						<h2 style="color: black;">Findings & Results</h2>
 						<div class="row" style="margin-bottom: 2em; text-align: center;">
-							<img src="images/dual_task_performance-1.png" alt="CR-DAgger Results Preview" style="width: 100%; height: auto;">
+							<img src="images/multi_task_performance.png" alt="CR-DAgger Results Preview" style="width: 100%; height: auto;">
 						</div>
 
 						<h3>Finding 1: Compliant Residual Policy improves base policy by a large margin</h3>
@@ -261,6 +315,58 @@ Our system significantly enhances performance on precise contact-rich manipulati
 									</span>
 									Base + Compliant Residual Policy (ours)
 								</div>
+							</div>
+						</div>
+
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/gear_base.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+								Base Policy: Missed insertion
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/gear_residual.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+								Base + Compliant Residual Policy (ours)
+							</div>
+						</div>
+
+						<div class="row 50% uniform" style="width: 100%">
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/cable_base.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+								Base Policy: Missed slot
+							</div>
+
+							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
+								<span class="image fit">
+									<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+										<source src="videos/cable_residual.mp4" type="video/mp4">
+									</video>
+									<div style="position: absolute; top: 2%; right: 1%">
+										<p style="color: white; text-align: center; font-size: 2em">1x</p>
+									</div>
+								</span>
+								Base + Compliant Residual Policy (ours)
 							</div>
 						</div>
 
@@ -512,5 +618,21 @@ This work was supported in part by the  NSF Award #2143601, #2037101, and #21325
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+			function toggleSection(sectionId) {
+				const content = document.getElementById(sectionId);
+				const section = content.closest('.toggle-section');
+				const arrow = section.querySelector('.toggle-arrow');
+				
+				if (content.classList.contains('show')) {
+					content.classList.remove('show');
+					section.classList.remove('expanded');
+				} else {
+					content.classList.add('show');
+					section.classList.add('expanded');
+				}
+			}
+			</script>
 	</body>
 </html>

@@ -85,6 +85,46 @@
 		width: 960px;
 	}
 
+	.toggle-section {
+		margin: 1.5em 0;
+	}
+	
+	.toggle-header {
+		color: #4e79a7;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: bold;
+		/* text-decoration: underline; */
+		transition: color 0.3s;
+		border: none;
+		background: none;
+		padding: 0;
+		font-size: inherit;
+	}
+	
+	.toggle-header:hover {
+		color: #3a5a7a;
+	}
+	
+	.toggle-arrow {
+		margin-left: 0.5em;
+		font-size: 0.8em;
+		transition: transform 0.3s;
+	}
+	
+	.toggle-content {
+		margin-top: 1em;
+		display: none;
+	}
+	
+	.toggle-content.show {
+		display: block;
+	}
+	
+	.toggle-section.expanded .toggle-arrow {
+		transform: rotate(180deg);
+	}
+
 	@media screen and (max-width: 1800px) {
 
 		.container.\31 25\25 {
